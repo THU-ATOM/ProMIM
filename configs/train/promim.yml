@@ -1,0 +1,38 @@
+model:
+  encoder:
+    node_feat_dim: 128
+    pair_feat_dim: 64
+    num_layers: 6
+  tf_encoder:
+    encoder_layers: 4
+    encoder_embed_dim: 128
+    encoder_attention_heads: 16
+    encoder_ffn_embed_dim: 512
+    recycling: 3
+  train_mode: pim+bim
+
+data:
+  train: !include ../common/data_train_ppiref50k.yml
+  val: !include ../common/data_val_ppiref50k.yml
+
+train:
+  padding_size: 64
+  loss_weights:
+    pim_loss: 0.5
+    bim_loss: 0.5
+  max_iters: 200_000
+  val_freq: 1000 
+  batch_size: 48
+  seed: 42
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4 
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 5
+    min_lr: 1.e-6

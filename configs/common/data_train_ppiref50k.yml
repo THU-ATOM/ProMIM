@@ -1,0 +1,14 @@
+split: train
+splits_path: ./PPIRef/ppiref/data/ppiref/ppiref50k_path_train
+processed_dir: ./data/PPIRef50K_processed
+
+transform:
+- type: select_atom
+  resolution: backbone+CB
+
+- type: random_ppiref_patch
+  patch_size: 64
+
+- type: random_rotation_translation
+  shuffle: True
+  resolution: backbone+CB
