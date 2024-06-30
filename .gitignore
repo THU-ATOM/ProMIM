@@ -144,4 +144,4 @@ result_test_promim_7fae/
 result_test_promim_skempi/
 
 # weights
-trained_models/
+trained_models/*

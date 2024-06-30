@@ -47,7 +47,7 @@ git clone https://github.com/anton-bushuiev/PPIRef.git
 ```
 **2. Prepare the Environment**
 
-The `ppiref` environment is used for parsing the PPIRef50K dataset. Please refer to the official [PPIRef](https://github.com/anton-bushuiev/PPIRef/tree/main) repo for detailed instructions. 
+For the `promim` environment, we suggest installing the `unicore` package from [Uni-Core](https://github.com/dptech-corp/Uni-Core/releases). The `ppiref` environment is used for parsing the PPIRef50K dataset. Please refer to the official [PPIRef](https://github.com/anton-bushuiev/PPIRef/tree/main) repo for detailed instructions. 
 ```bash
 conda create -n promim python=3.8
 conda activate promim
@@ -72,13 +72,13 @@ python ./src/datasets/ppiref50k.py
 **2. Get SKEMPI2**
 ```bash
 cd data
-bash ./data/get_skempi_v2.sh
+bash ./get_skempi_v2.sh
 cd ..
 ```
 
 ## Inference
 
-Download the trained weights from [Google Driver](https://drive.google.com/drive/folders/1fDn-qps7Lgejd8dowegujJSQE2QJQOeD) and put them into the "trained_models" folder. We use the trained weight of RDE from the [RDE-PPI](https://github.com/luost26/RDE-PPI) repo for SIM. 
+Download the trained weights from [Google Driver](https://drive.google.com/drive/folders/1fDn-qps7Lgejd8dowegujJSQE2QJQOeD) and put them into the `trained_models` folder. We use the trained weight of RDE from the [RDE-PPI](https://github.com/luost26/RDE-PPI) repo for SIM. 
 
 **1. Predicting Mutational Effects on Protein-Protein Binding**
 
